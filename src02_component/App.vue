@@ -14,18 +14,18 @@
 import Header from './components/Header.vue'
 import List from './components/List.vue'
 import Footer from './components/Footer.vue'
-import storageUtile from './until/storageUtile'
 import './base.css'
+import storageUtile from './until/storageUtile.js'
 
 export default {
   data(){
     return {
-      dos: storageUtile.getTodos()
-      // dos: [
-      //   {title: '吃饭', complete: false},
-      //   {title: '睡觉', complete: false},
-      //   {title: '打豆豆', complete: true},
-      // ]
+      // dos:storageUtile.getTodos()
+      dos: [
+        {title: '吃饭', complete: false},
+        {title: '睡觉', complete: false},
+        {title: '打豆豆', complete: true},
+      ]
     }
   },
   methods:{
@@ -42,16 +42,7 @@ export default {
       this.dos.forEach(dos => dos.complete = is)
     }
   },
-  watch:{
-    dos:{
-      deep:true,
-      // handler: function (newvalue) {
-      //   storage.saveTodos(newvalue)
-      // }
-      handler:storageUtile.saveTodos
 
-    }
-  },
   name: 'App',
   components: {
     Header,
