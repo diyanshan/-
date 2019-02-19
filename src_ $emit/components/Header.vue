@@ -6,12 +6,6 @@
 
 <script>
   export default {
-    props:{
-      addtodos:{
-        type:Function,
-        required:true
-      }
-    },
     data(){
       return{
         title:''
@@ -27,7 +21,8 @@
           title,
           complete:false
         }
-        this.addtodos(todo)
+        // this.addtodos(todo)
+        this.$emit('addtodos',todo)
         this.title = ''
       }
     },
