@@ -32,10 +32,12 @@
         // 更新状态
         this.firstshow = false
         this.loding =true
+        debugger
         //发送ajax请求
         const url = `https://api.github.com/search/users?q=${searchName}`
         axios.get(url).then(res => {
           const repo = res.data
+          debugger
           const users = repo.items.map(item => ({
             name:item.login,
             url:item.html_url,
@@ -43,6 +45,8 @@
           }))
           this.loding = false
           this.users =users
+
+          console.log(searchName)
 
         }).catch(err => {
           //发送失败

@@ -21,10 +21,13 @@
     methods:{
       search(){
         const searchName = this.searchName.trim()
+
         if (searchName) {
           PubSub.publish('search',searchName)
+            debugger
         }
       }
+
     },
     name: 'Search'
   }

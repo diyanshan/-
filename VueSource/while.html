@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var indices = [];
+  var array = ['a', 'b', 'a', 'c', 'a', 'd'];
+  var element = 'a';
+  var idx = array.indexOf(element);   //  0
+  while (idx != -1) {
+    indices.push(idx);  // 0  //
+    idx = array.indexOf(element, idx + 1);  //2
+  }
+  console.log(indices);
+
+
+  var array = [2, 5, 9];
+  array.indexOf(2)     // 0
+  array.indexOf(7)     // -1
+  array.indexOf(9, 2)  // 2
+  array.indexOf(2, -1) // -1
+  array.indexOf(2, -3) // 0
+
+</script>
+
+</body>
+</html>
